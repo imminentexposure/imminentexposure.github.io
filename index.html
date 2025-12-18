@@ -5,6 +5,15 @@
   <title>Launching Soon — Imminent Exposure</title>
 
   <style>
+    /* === CUSTOM FONT === */
+    @font-face {
+      font-family: "ImminentExposure";
+      src: url("fonts/ImminentExposure.woff2") format("woff2"),
+           url("fonts/ImminentExposure.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+
     body {
       margin: 0;
       background-color: #000;
@@ -34,9 +43,11 @@
     }
 
     h1 {
+      font-family: "ImminentExposure", Arial, Helvetica, sans-serif;
       font-size: 96px;
       line-height: 1;
       margin: 0;
+      letter-spacing: -0.02em;
     }
 
     .hero-logo {
