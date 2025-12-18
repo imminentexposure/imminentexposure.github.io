@@ -1,63 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Launching Soon</title>
+  <meta charset="UTF-8">
+  <title>Launching Soon — Imminent Exposure</title>
+
   <style>
     body {
       margin: 0;
       background-color: #000;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      height: 100vh;
+    }
+
+    .hero {
+      display: flex;
+      height: 100%;
+      padding: 60px;
+      box-sizing: border-box;
+    }
+
+    .hero-text {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: white;
-      font-family: Arial, sans-serif;
     }
 
-    img {
+    .domain {
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 96px;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .hero-logo {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-logo video {
       max-width: 80%;
       height: auto;
-      margin-bottom: 2rem;
     }
 
     form {
+      margin-top: 60px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
+      gap: 10px;
+      max-width: 300px;
+    }
+
+    label {
+      font-size: 14px;
+      opacity: 0.8;
     }
 
     input[type="email"] {
-      padding: 0.5rem;
-      font-size: 1rem;
+      padding: 10px;
+      font-size: 14px;
       border: none;
-      border-radius: 5px;
-      width: 250px;
+      border-radius: 4px;
+      outline: none;
     }
 
     button {
-      padding: 0.5rem 1rem;
+      padding: 10px;
       background-color: white;
       color: black;
       font-weight: bold;
       border: none;
-      border-radius: 5px;
+      border-radius: 4px;
       cursor: pointer;
     }
 
     button:hover {
       background-color: #ddd;
     }
+
+    /* Mobile fallback */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 64px;
+      }
+
+      .hero-logo {
+        margin-top: 40px;
+      }
+
+      .hero-logo video {
+        max-width: 70%;
+      }
+    }
   </style>
 </head>
-<body>
-  <img src="launching_soon.png" alt="Launching Soon">
 
-  <form action="https://formspree.io/f/mldlloge" method="POST">
-    <label for="email">Unlock early updates:</label>
-    <input type="email" name="email" id="email" placeholder="Your email" required>
-    <button type="submit">Subscribe</button>
-  </form>
+<body>
+  <div class="hero">
+
+    <div class="hero-text">
+      <div class="domain">IMMINENTEXPOSURE.COM</div>
+      <h1>Launching<br>soon</h1>
+
+      <form action="https://formspree.io/f/mldlloge" method="POST">
+        <label for="email">Unlock early updates:</label>
+        <input type="email" name="email" id="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <div class="hero-logo">
+      <video autoplay loop muted playsinline poster="launching_soon.png">
+        <source src="logo-turnaround.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
 </body>
 </html>
