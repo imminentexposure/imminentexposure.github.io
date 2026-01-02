@@ -5,7 +5,6 @@
   <title>Launching Soon — Imminent Exposure</title>
 
   <style>
-    /* === CUSTOM FONT === */
     @font-face {
       font-family: "ImminentExposure";
       src: url("fonts/ImminentExposure.woff2") format("woff2"),
@@ -36,7 +35,6 @@
       justify-content: center;
     }
 
-    /* Apply custom font to all main text elements */
     .domain,
     h1,
     label,
@@ -65,9 +63,12 @@
       justify-content: center;
     }
 
+    /* Fade-in video */
     .hero-logo video {
       max-width: 80%;
       height: auto;
+      opacity: 0;
+      transition: opacity 0.8s ease;
     }
 
     form {
@@ -105,7 +106,6 @@
       background-color: #ddd;
     }
 
-    /* Mobile fallback */
     @media (max-width: 768px) {
       .hero {
         flex-direction: column;
@@ -143,11 +143,18 @@
     </div>
 
     <div class="hero-logo">
-      <video autoplay loop muted playsinline poster="launching_soon.png">
+      <video id="heroVideo" autoplay loop muted playsinline>
         <source src="logo-turnaround.mp4" type="video/mp4">
       </video>
     </div>
 
   </div>
+
+  <script>
+    const video = document.getElementById("heroVideo");
+    video.addEventListener("canplay", () => {
+      video.style.opacity = "1";
+    });
+  </script>
 </body>
 </html>
